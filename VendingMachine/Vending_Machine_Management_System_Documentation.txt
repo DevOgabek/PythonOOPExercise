@@ -1,66 +1,50 @@
 **************** Vending Machine Management System ****************
 
-   T1 -> VendingMachine Class:
+T1 -> VendingMachine Class:
+    The VendingMachine class manages a vending machine system organized with the following components:
+    - It stores a list of available beverages.
+    - It maintains a list of cards with associated credit.
+    - It keeps track of vending machine columns, each representing a specific beverage with a quantity.
 
-       The VendingMachine class manages a vending machine system organized with the following components:
+T2 -> Adding a Beverage:
+    To add a beverage to the vending machine, use the addBeverage() method. It allows you to specify the beverage's name and price.
+    Example:
+    vending_machine.addBeverage(coca_cola)
+    vending_machine.addBeverage(pepsi)
 
-       - It stores a list of available beverages.
-       - It maintains a list of cards with associated credit.
-       - It keeps track of vending machine columns, each representing a specific beverage with a quantity.
+T3 -> Recharging a Card:
+    The rechargeCard() method adds credit to an existing card or creates a new card with the specified ID and credit.
+    Example:
+    vending_machine.rechargeCard(card_id=12, credit=12000)
+    vending_machine.rechargeCard(card_id=21, credit=5600)
 
-   T2 -> Adding a Beverage:
+T4 -> Checking Credit on a Card:
+    The getCredit() method retrieves the remaining credit on a card with the specified ID.
+    Example:
+    remaining_credit = vending_machine.getCredit(card_id=12)
+    # Output: 12000.0
 
-       To add a beverage to the vending machine, use the addBeverage() method. It allows you to specify the beverage's name and price.
+T5 -> Refilling a Vending Machine Column:
+    The refillColumn() method refills a vending machine column with a specified quantity of a given beverage.
+    Example:
+    vending_machine.refillColumn(column_number=1, beverage_name="Coca Cola", quantity=5)
 
-       Example:
-       vending_machine.addBeverage(coca_cola)
-       vending_machine.addBeverage(pepsi)
+T6 -> Checking Available Cans:
+    The availableCans() method returns the total quantity of a specific beverage available in the vending machine.
+    Example:
+    available_quantity = vending_machine.availableCans(beverage_name="Coca Cola")
+    # Output: 5
 
-   T3 -> Recharging a Card:
+T7 -> Selling a Beverage:
+    The sell() method sells a beverage to a customer using a card, deducting the appropriate credit and decreasing the quantity in the corresponding column.
+    Example:
+    result = vending_machine.sell(beverage_name="Coca Cola", card_id=12)
+    # Output: Sold from column number: 1
 
-       The rechargeCard() method adds credit to an existing card or creates a new card with the specified ID and credit.
+T8 -> Getting Beverage Price:
+    The getBeveragePrice() method returns the price of a specific beverage.
+    Example:
+    price = vending_machine.getBeveragePrice(beverage_name="Coca Cola")
+    # Output: 3200
 
-       Example:
-       vending_machine.rechargeCard(card_id=12, credit=12000)
-       vending_machine.rechargeCard(card_id=21, credit=5600)
-
-   T4 -> Checking Credit on a Card:
-
-       The getCredit() method retrieves the remaining credit on a card with the specified ID.
-
-       Example:
-       remaining_credit = vending_machine.getCredit(card_id=12)
-       # Output: 12000.0
-
-   T5 -> Refilling a Vending Machine Column:
-
-       The refillColumn() method refills a vending machine column with a specified quantity of a given beverage.
-
-       Example:
-       vending_machine.refillColumn(column_number=1, beverage_name="Coca Cola", quantity=5)
-
-   T6 -> Checking Available Cans:
-
-       The availableCans() method returns the total quantity of a specific beverage available in the vending machine.
-
-       Example:
-       available_quantity = vending_machine.availableCans(beverage_name="Coca Cola")
-       # Output: 5
-
-   T7 -> Selling a Beverage:
-
-       The sell() method sells a beverage to a customer using a card, deducting the appropriate credit and decreasing the quantity in the corresponding column.
-
-       Example:
-       result = vending_machine.sell(beverage_name="Coca Cola", card_id=12)
-       # Output: Sold from column number: 1
-
-   T8 -> Getting Beverage Price:
-
-       The getBeveragePrice() method returns the price of a specific beverage.
-
-       Example:
-       price = vending_machine.getBeveragePrice(beverage_name="Coca Cola")
-       # Output: 3200
-
-   Note: Adjust method names, variable names, and comments as needed for clarity and adherence to your code style.
+Note: Adjust method names, variable names, and comments as needed for clarity and adherence to your code style.

@@ -1,57 +1,29 @@
 ************************** Medical Clinic **************************
-    Implementation of a system for the management of medical clinic patients. The system must meet the following requirements.
 
-  T1-> Patients:
-       The core functionality of the system is implemented through the Clinic class.
+T1-> Patients:
+  - The core functionality of the system is implemented through the Clinic class.
+  - Patients have a first name, last name, and a unique Social Security Number (SSN).
+  - A patient can be added to the system using the `addPatient()` method.
+  - Information about the patient can be obtained through the `getPatient()` method, which accepts the SSN of the patient and returns the corresponding Person object. The Person class provides methods to retrieve the first name, last name, and SSN.
+  - If the patient is not found, the `NoSuchPatient` exception is raised.
 
-       Patients have a first name, last name, and a unique Social Security Number (SSN).
+T2-> Doctors:
+  - Doctors have a name, surname, non-repeating Social Security Number, ID, and specialty.
+  - A doctor can be added to the system using the `addDoctor()` method.
+  - Information about the doctor can be obtained through the `getDoctor()` method. The method accepts the ID of the doctor and returns a Doctor object.
+  - The Doctor class is derived from the Person class and includes getter methods to retrieve the ID and specialty.
+  - If no doctor is found, a `NoSuchDoctor` exception is raised. Keep in mind that doctors may also be patients at the clinics where they work.
 
-       A patient can be added to the system using the addPatient() method.
+T3-> Patient Registration:
+  - When a patient is admitted, the clinic assigns them to one of the doctors.
+  - The `assignPatientToDoctor()` method serves this purpose. The method is given the patient's SSN and the doctor's ID.
+  - A `NoSuchPatient` exception is raised if no patient is found.
+  - A `NoSuchDoctor` exception is raised if there is no doctor.
+  - The doctor assigned to the patient can be obtained through the `getDoctor()` method of the Person class.
+  - The list of patients assigned to a doctor can be obtained through the `getPatients()` method of the Doctor class.
 
-       Information about the patient can be obtained through the getPatient() method, which accepts the SSN of the patient and
-       returns the corresponding Person object. The Person class provides methods to retrieve the first name, last name, and SSN.
-
-       If the patient is not found, the NoSuchPatient exception is raised.
-
-  T2-> Doctors:
-       Doctors have a name, surname, non-repeating Social Security Number, ID, and specialty.
-       A doctor can be added to the system using the addDoctor() method.
-
-       Information about the doctor can be obtained through the getDoctor() method.
-       The method accepts the ID of the doctor and returns a Doctor object.
-
-       The Doctor class is derived from the Person class and includes getter methods to retrieve the ID and specialty.
-
-       If no doctor is found, a NoSuchDoctor exception is raised.
-       Keep in mind that doctors may also be patients at the clinics where they work.
-
-  T3-> Patient Registration:
-       When a patient is admitted, the clinic assigns them to one of the doctors.
-
-       The assignPatientToDoctor() method serves this purpose.
-       The method is given the patient's SSN and the doctor's ID.
-       A NoSuchPatient exception is raised if no patient is found.
-       A NoSuchDoctor exception is raised if there is no doctor.
-
-       The doctor assigned to the patient can be obtained through the getDoctor() method of the Person class.
-       The list of patients assigned to a doctor can be obtained through the getPatients() method of the Doctor class.
-
-  T4-> Statistics:
-
-       The idleDoctors() method returns a list of doctors who do not have any patients.
-       The list is sorted alphabetically (surname, first name).
-
-       The busyDoctors() method returns a list of doctors who have more patients than the average number of patients.
-       The list is sorted alphabetically (surname, first name).
-
-       The doctorsByNumPatients() method consists of the name of the doctor and the number of their patients.
-       It returns a list of strings (String).
-       The list is sorted by the number of patients in descending order.
-       String format: "###: ID SURNAME NAME"
-       ### - indicates the number of patients.
-
-       The countPatientsPerSpecialization() method counts the number of patients per specialty.
-       It returns a list of strings.
-       The list should be sorted in descending order by the number of patients and alphabetically by specialty.
-       String format: "### - SPECIALTY".
-       ### - number of patients.
+T4-> Statistics:
+  - The `idleDoctors()` method returns a list of doctors who do not have any patients. The list is sorted alphabetically (surname, first name).
+  - The `busyDoctors()` method returns a list of doctors who have more patients than the average number of patients. The list is sorted alphabetically (surname, first name).
+  - The `doctorsByNumPatients()` method consists of the name of the doctor and the number of their patients. It returns a list of strings (String). The list is sorted by the number of patients in descending order. String format: "###: ID SURNAME NAME". ### - indicates the number of patients.
+  - The `countPatientsPerSpecialization()` method counts the number of patients per specialty. It returns a list of strings. The list should be sorted in descending order by the number of patients and alphabetically by specialty. String format: "### - SPECIALTY". ### - number of patients.

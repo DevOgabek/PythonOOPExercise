@@ -1,6 +1,6 @@
 # Python OOP Exercise
 
-This repository contains two Object-Oriented Programming (OOP) exercises: Library Management System and Vending Machine Management System.
+Welcome to the Python OOP Exercise repository! Here, you will find a collection of exercises that cover various aspects of object-oriented programming (OOP) in Python.
 
 ## Library Management System
 

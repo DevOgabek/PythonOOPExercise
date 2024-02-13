@@ -1,54 +1,42 @@
 **************** Library ****************
 
-   T1 -> Library Class:
+T1 -> Library Class:
+    The Library class manages a book management system organized in a multi-dimensional structure:
+    - It consists of 3 floors.
+    - Each floor has 30 shelves.
+    - Each shelf contains 6 closets.
+    - Each closet has 10 positions for books.
 
-       The Library class manages a book management system organized in a multi-dimensional structure:
+T2 -> Adding a Book:
+    To add a book to the library, use the add() method. It allows you to specify the book, floor, shelf, closet, and position.
+    Example:
+    library.add(myBook, floor=2, shelf=5, closet=3, position=7)
 
-       - It consists of 3 floors.
-       - Each floor has 30 shelves.
-       - Each shelf contains 6 closets.
-       - Each closet has 10 positions for books.
+T3 -> Checking if a Book is in the Library:
+    The contains() method checks if a given book is present in the library and returns its location.
+    Example:
+    result = library.contains(myBook)
+    # Output: "MyBook by Author is located at 2nd floor, 5th shelf, 3rd closet, position 7."
 
-   T2 -> Adding a Book:
+T4 -> Retrieving Books from a Closet:
+    The get_books() method allows you to retrieve all books from a specific floor, shelf, and closet.
+    Example:
+    library.get_books(floor=2, shelf=5, closet=3)
+    # Output:
+    # Author1, Book1
+    # Author2, Book2
+    # ...
 
-       To add a book to the library, use the add() method. It allows you to specify the book, floor, shelf, closet, and position.
+T5 -> Retrieving the Location of a Book:
+    The get_floor(), get_shelf(), and get_closet() methods help you find the location of a book within the library.
+    Example:
+    floor_location = library.get_floor(myBook)
+    # Output: "MyBook is located at 2nd floor."
 
-       Example:
-       library.add(myBook, floor=2, shelf=5, closet=3, position=7)
+T6 -> Searching for a Book:
+    The find() method allows you to search for a book by providing its name and author.
+    Example:
+    result = library.find(name="MyBook", author="Author")
+    # Output: "MyBook by Author is located at 2nd floor, 5th shelf, 3rd closet, position 7."
 
-   T3 -> Checking if a Book is in the Library:
-
-       The contains() method checks if a given book is present in the library and returns its location.
-
-       Example:
-       result = library.contains(myBook)
-       # Output: "MyBook by Author is located at 2nd floor, 5th shelf, 3rd closet, position 7."
-
-   T4 -> Retrieving Books from a Closet:
-
-       The get_books() method allows you to retrieve all books from a specific floor, shelf, and closet.
-
-       Example:
-       library.get_books(floor=2, shelf=5, closet=3)
-       # Output:
-       # Author1, Book1
-       # Author2, Book2
-       # ...
-
-   T5 -> Retrieving the Location of a Book:
-
-       The get_floor(), get_shelf(), and get_closet() methods help you find the location of a book within the library.
-
-       Example:
-       floor_location = library.get_floor(myBook)
-       # Output: "MyBook is located at 2nd floor."
-
-   T6 -> Searching for a Book:
-
-       The find() method allows you to search for a book by providing its name and author.
-
-       Example:
-       result = library.find(name="MyBook", author="Author")
-       # Output: "MyBook by Author is located at 2nd floor, 5th shelf, 3rd closet, position 7."
-
-   Note: Adjust method names, variable names, and comments as needed for clarity and adherence to your code style.
+Note: Adjust method names, variable names, and comments as needed for clarity and adherence to your code style.

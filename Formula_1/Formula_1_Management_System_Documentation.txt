@@ -1,0 +1,53 @@
+/********************** Formula 1 **********************/
+
+// T1-> Drivers:
+// The system works through the Championship class.
+// The createDriver() method accepts the name of the driver and returns a Driver object.
+// The getName() method in the Driver class returns the name of the driver.
+// The getDrivers() method in the Championship class returns all the drivers in the championship.
+// The getDriver() method accepts a driver name and returns the corresponding Driver object.
+
+// T2-> Grand Prix:
+// Drivers can participate in an unspecified number of Grand Prix.
+// It is possible to create a Grand Prix through the defineGrandPrix() method, and the method GP(Grand Prix) returns an object.
+// In the GP class, the getName() method returns the name of the Grand Prix.
+// The getGrandPrix() method of the Championship class accepts the name of the Grand Prix and returns the corresponding object.
+
+// T3-> Time:
+// A driver participating in a Grand Prix will finish the race for a certain time.
+// This time is entered into the system through the setTime() method, and the method accepts the following parameters:
+//    GP object (one Grand Prix object)
+//    Driver object (a single driver object)
+//    Finish time:
+//       - Hours
+//       - Minutes
+//       - Seconds
+//       - Milliseconds
+// The method returns a Time object.
+
+// The toString() method in the Time class returns the race time in the format "hour:minute:second.millisecond".
+// In the GP class, the getGPRanking() method returns the list of drivers who participated in this Grand Prix race in ascending order of completion time.
+
+// T4-> Order:
+// The getPosition() method in the GP class returns the position (how many positions) the driver took at this Grand Prix.
+// The method accepts a Driver object.
+
+// In the Driver class, you can find out which Grand Prix this driver participated in through the getRaced() method.
+
+// Through the Driver object, it is possible to find out how many points he scored in the Grand Prix.
+// The scores will be as follows:
+//    Place | Points
+//      1   |   25
+//      2   |   18
+//      3   |   15
+//      4   |   12
+//      5   |   10
+//      6   |    8
+//      7   |    6
+//      8   |    4
+//      9   |    2
+//     10   |    1
+
+// The getPoints() method in the Driver class returns the number of points the driver has scored in races.
+
+// In the Championship class, the getChampionshipRanking() method returns a list of drivers in descending order of the points scored by the drivers in the races.

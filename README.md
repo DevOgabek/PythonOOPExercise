@@ -33,6 +33,17 @@ Welcome to the Python OOP Exercise repository! Here, you will find a collection 
 ### Documentation
 - [Formula_1_Management_System_Documentation](Formula_1/Formula_1_Management_System_Documentation.txt): Documentation for the Formula 1 Management System.
 
+## Clinic Management System
+
+### Files
+- **clinic.py**: Implementation of the Clinic class.
+- **person.py**: Implementation of the Person class.
+- **doctor.py**: Implementation of the Doctor class.
+- **test.py**: Test cases for the Clinic Management System.
+
+### Documentation
+- [Clinic_Management_System_Documentation](Clinic/Clinic_Management_System_Documentation.txt): Documentation for the Clinic Management System.
+
 ## How to Run
 
 To test the implementations, run the following commands:
@@ -41,3 +52,4 @@ To test the implementations, run the following commands:
 python Library/test.py
 python VendingMachine/test.py
 python Formula_1/test.py
+python Clinic/test.py
